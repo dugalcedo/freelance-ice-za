@@ -1,0 +1,41 @@
+/* FONTS */
+@font-face {
+    font-family: "Nexa";
+    src: url("../fonts/nexa_bold-webfont.ttf");
+    font-weight: bold;
+}
+@font-face {
+    font-family: "Nexa";
+    src: url("../fonts/nexa_light-webfont.ttf");
+    font-weight: normal;
+}
+body, button, input, textarea, select, option {
+    font-family: "Nexa", sans-serif;
+}
+/* END FONTS */
+/* --------- */
+/* VARIABLES */
+:root {
+    --slate: #181818;
+    --light: #ececec;
+    --accent: #f0592c;
+    --gray: gray;
+}
+/* END VARIABLES */
+/* ------------- */
+/* CSS RESET */
+* {
+    box-sizing: border-box;
+}
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, dl {
+    margin: 0;
+}
+ul, ol, dl {
+    list-style-type: none;
+}
+li {
+    padding: 0;
+}
+button, input[type="button"], input[type="submit"] {
+    cursor: pointer;
+}
