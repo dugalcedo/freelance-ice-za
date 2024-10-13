@@ -16,10 +16,14 @@ body, button, input, textarea, select, option {
 /* --------- */
 /* VARIABLES */
 :root {
+    /* colors */
     --slate: #181818;
     --light: #ececec;
     --accent: #f0592c;
     --gray: gray;
+
+    /* sizes */
+    --container-width: 1300px;
 }
 /* END VARIABLES */
 /* ------------- */
@@ -37,5 +41,29 @@ li {
     padding: 0;
 }
 button, input[type="button"], input[type="submit"] {
+    border: 0;
+    padding: 0.5rem 1.5rem;
     cursor: pointer;
+}
+input, select, option {
+    padding: 0.5rem;
+}
+/* END CSS RESET */
+/* ------------- */
+/* SITE SPECIFIC */
+.container-inner {
+    width: var(--container-width);
+    max-width: 100%;
+    margin: auto;
+}
+.accent-btn {
+    background-color: var(--accent);
+    border: 3px outset var(--accent);
+    color: var(--light);
+}
+.accent-btn:hover {
+    filter: brightness(1.5);
+}
+.accent-btn:active {
+    border: 3px inset var(--accent);
 }
