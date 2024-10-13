@@ -2,4 +2,4 @@
     import HomeHeroItem from './HomeHeroItem.svelte'
 </script>
 
-<HomeHeroItem heading="What we do" image="/images/samples/hand-delivery.jpg" text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis iusto inventore atque nisi veritatis reiciendis ea doloribus consequuntur, pariatur cumque quisquam similique itaque consequatur, beatae exercitationem tempora." />
+<HomeHeroItem heading="Your #1 Online Courier Company" image="/images/samples/hand-delivery.jpg" text="ICExpress is a proudly South African company whose mission is to become one of world’s most admired courier companies and we are on track to becoming just that. We are your trusted courier partner; offering an efficient online courier solution. Innovating the way we send our goods around South Africa and around the world." />

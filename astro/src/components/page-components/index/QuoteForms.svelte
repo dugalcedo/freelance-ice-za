@@ -1,5 +1,7 @@
 <script>
     import QuoteFormPackage from './QuoteFormPackage.svelte'
+    import { openModal } from '../../modals/modalStore.svelte.js'
+    import { slide } from 'svelte/transition'
 
     const shippingTypes = [
         'Business',
@@ -17,7 +19,8 @@
             width: "",
             height: "",
             weight: "",
-            qty: 1
+            qty: 1,
+            type: "Flyer"
         }
     }
 
@@ -40,6 +43,7 @@
 
     // state
     let isInternational = false;
+    let isImport = false;
 </script>
 
 <form>
@@ -69,29 +73,61 @@
     </div>
     <!-- top -->
     <div class="top">
-        <div class="field">
-            <label for="">From</label>
-            <input type="text" placeholder="Collection town">
-        </div> 
-        <div class="field">
-            <label for="">To</label>
-            <input type="text" placeholder="Delivery town">
-        </div>
-        <div class="field">
-            <label for="">Sender type</label>
-            <select name="" id="">
-                {#each shippingTypes as type}
-                    <option value="{type}">{type}</option>
-                {/each}
-            </select>
-        </div>
-        <div class="field">
-            <label for="">Recipient type</label>
-            <select name="" id="">
-                {#each shippingTypes as type}
-                    <option value="{type}">{type}</option>
-                {/each}
-            </select>
+        {#if isInternational}
+            <div class="imp-or-exp" transition:slide>
+                <button type="button" class:active={isImport} on:click={()=>isImport = true}>
+                    Import
+                </button>
+                <button type="button" class:active={!isImport} on:click={()=>isImport = false}>
+                    Export
+                </button>
+            </div>
+        {/if}
+        <div class="top-fields">
+            {#if isInternational}
+                <div class="field" transition:slide>
+                    <label for="">Starting<br>country</label>
+                    <input type="text" disabled={!isImport} value={!isImport ? "South Africa" : ""}>
+                </div>
+                <div class="field" transition:slide>
+                    <label for="">Destination<br>country</label>
+                    <input type="text" disabled={isImport} value={isImport ? "South Africa" : ""}>
+                </div>
+            {/if}
+            <div class="field">
+                <label for="">
+                    From
+                    {#if isInternational && isImport}
+                        <br><small>(Town or zip code)</small>
+                    {/if}
+                </label>
+                <input type="text" placeholder="Collection town">
+            </div>
+            <div class="field">
+                <label for="">
+                    To
+                    {#if isInternational && !isImport}
+                        <br><small>(Town or zip code)</small>
+                    {/if}
+                </label>
+                <input type="text" placeholder="Delivery town">
+            </div>
+            <div class="field">
+                <label for="">Sender type</label>
+                <select name="" id="">
+                    {#each shippingTypes as type}
+                        <option value="{type}">{type}</option>
+                    {/each}
+                </select>
+            </div>
+            <div class="field">
+                <label for="">Recipient type</label>
+                <select name="" id="">
+                    {#each shippingTypes as type}
+                        <option value="{type}">{type}</option>
+                    {/each}
+                </select>
+            </div>
         </div>
     </div>
     <!-- end top -->
@@ -108,11 +144,9 @@
             {@const isLast = i == (packages.length-1)}
             {@const isOnly = packages.length <= 1}
                 <QuoteFormPackage
-                    {isLast}
                     {isOnly}
                     {i}
                     {pkg}
-                    {addPackage}
                     {removePackage}
                 />
             {/each}
@@ -140,12 +174,16 @@
                 <div class="field">
                     <input type="checkbox">
                     <label for="">I accept and understand the <em>Insurance Terms & Conditions</em></label>
-                    <a href="#">[See]</a>
+                    <button on:click={() => openModal("termsAndConditions")} type="button">
+                        [See]
+                    </button>
                 </div>
                 <div class="field">
                     <input type="checkbox">
                     <label for="">I accept the <em>Declaration of Weights & Dimensions</em></label>
-                    <a href="#">[See]</a>
+                    <button type="button" on:click={() => openModal("declarationOfWeights")}>
+                        [See]
+                    </button>
                 </div>
             </div>
             <button type="submit" class="accent-btn submit">
@@ -190,6 +228,7 @@
         color: var(--light);
     }
 
+
     .int-or-dom {
         display: flex;
     }
@@ -215,11 +254,25 @@
     }
 
     .top {
+        /* margin-bottom: 0.5rem; */
+        padding: 0.5rem 1rem;
+    }
+
+    .imp-or-exp {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-bottom: .5rem;
+    }
+
+    .imp-or-exp button {
+        border: 3px outset var(--light);
+    }
+
+    .top-fields {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 0.5rem;
-        /* margin-bottom: 0.5rem; */
-        padding: 0.5rem 1rem;
+
     }
 
     .top .field {

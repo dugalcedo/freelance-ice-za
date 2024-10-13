@@ -2,4 +2,4 @@
     import HomeHeroItem from './HomeHeroItem.svelte'
 </script>
 
-<HomeHeroItem heading="Our carbon footprint" image="/images/samples/vans-on-map.jpg" text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis iusto inventore atque nisi veritatis reiciendis ea doloribus consequuntur, pariatur cumque quisquam similique itaque consequatur, beatae exercitationem tempora." />
+<HomeHeroItem heading="The Courier Website that Remembers You" image="/images/samples/vans-on-map.jpg" text="Remembers your shipments, remembers your collection and delivery addresses. The website that removes the need for waybills and sends you an electronic waybill for every shipment, every time." />

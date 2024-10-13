@@ -6,6 +6,13 @@
     // export let addPackage;
     export let i;
 
+    const packageTypes = [
+        'Flyer',
+        'Box',
+        'Crate',
+        'Pallet'
+    ]
+
     function changeQtyBy(amt) {
         let newQty = pkg.qty + amt;
         if (newQty < 1) return;
@@ -14,22 +21,30 @@
 </script>
 
 <div class="package">
+    <div class="type">
+        <label for="pkg-typ-{i}">Package type</label>
+        <select id="pkg-typ-{i}" bind:value={pkg.type}>
+            {#each packageTypes as type}
+                <option value="{type}">{type}</option>
+            {/each}
+        </select>
+    </div>
     <div class="dimensions">
         <div class="field">
-            <label for="">Length</label>
-            <input type="text" placeholder="cm">
+            <label for="pkg-len-{i}">Length</label>
+            <input id="pkg-len-{i}" type="text" placeholder="cm" bind:value={pkg.length}>
         </div>
         <div class="field">
-            <label for="">Width</label>
-            <input type="text" placeholder="cm">
+            <label for="pkg-wid-{i}">Width</label>
+            <input id="pkg-wid-{i}" type="text" placeholder="cm" bind:value={pkg.width}>
         </div>
         <div class="field">
-            <label for="">Height</label>
-            <input type="text" placeholder="cm">
+            <label for="pkg-hei-{i}">Height</label>
+            <input id="pkg-hei-{i}" type="text" placeholder="cm" bind:value={pkg.height}>
         </div>
         <div class="field">
-            <label for="">Weight</label>
-            <input type="text" placeholder="kg">
+            <label for="pkg-wei-{i}">Weight</label>
+            <input id="pkg-wei-{i}" type="text" placeholder="kg" bind:value={pkg.weight}>
         </div>
     </div>
     <div class="quantity">
@@ -65,7 +80,7 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: .5rem;
-        border: 1px solid var(--light);
+        border: 1px solid var(--gray);
         padding: .5rem;
         border-radius: .25rem;
     }

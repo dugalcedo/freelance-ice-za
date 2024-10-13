@@ -2,6 +2,8 @@
 import Header from "../components/layout-components/Header.svelte"
 import Hero from "../components/page-components/index/Hero.svelte"
 import HomeQuickQuoteSection from "../components/page-components/index/HomeQuickQuoteSection.svelte"
+import ModalLoader from '../components/modals/ModalLoader.svelte'
+import ServiceTiers from '../components/page-components/index/ServiceTiers.svelte'
 ---
 
 <html lang="en">
@@ -14,10 +16,12 @@ import HomeQuickQuoteSection from "../components/page-components/index/HomeQuick
 		<title>ICE</title>
 	</head>
 	<body>
+		<ModalLoader modalIds={["termsAndConditions", "declarationOfWeights"]} client:load />
 		<Header />
 		<main>
 			<Hero client:load />
 			<HomeQuickQuoteSection client:load />
+			<ServiceTiers />
 		</main>
 	</body>
 </html>
