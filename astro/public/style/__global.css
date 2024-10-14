@@ -20,7 +20,11 @@ body, button, input, textarea, select, option {
     --slate: #181818;
     --light: #ececec;
     --accent: #f0592c;
+    --accent-dark: #c94016;
+    --accent-light: #ff6e41;
+    --light-gray: #bbbbbb;
     --gray: gray;
+    --dark-gray: #383838;
 
     /* sizes */
     --container-width: 1300px;

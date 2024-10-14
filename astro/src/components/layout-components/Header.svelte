@@ -15,6 +15,10 @@
             <div>
                 <p class="contact-us">Contact us</p>
                 <p>031 0300 300</p>
+                <p>
+                    086 9990 559
+                    <small>(intl.)</small>
+                </p>
             </div>
         </div>
 

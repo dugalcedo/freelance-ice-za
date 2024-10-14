@@ -1,9 +1,11 @@
 ---
 import Header from "../components/layout-components/Header.svelte"
+import Footer from "../components/layout-components/Footer.svelte"
 import Hero from "../components/page-components/index/Hero.svelte"
 import HomeQuickQuoteSection from "../components/page-components/index/HomeQuickQuoteSection.svelte"
 import ModalLoader from '../components/modals/ModalLoader.svelte'
 import ServiceTiers from '../components/page-components/index/ServiceTiers.svelte'
+import WhatWeOffer from '../components/page-components/index/WhatWeOffer.svelte'
 ---
 
 <html lang="en">
@@ -22,6 +24,8 @@ import ServiceTiers from '../components/page-components/index/ServiceTiers.svelt
 			<Hero client:load />
 			<HomeQuickQuoteSection client:load />
 			<ServiceTiers />
+			<WhatWeOffer client:load />
 		</main>
+		<Footer />
 	</body>
 </html>
