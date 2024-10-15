@@ -1,4 +1,6 @@
 <script>
+    import NavItem from './nav/NavItem.svelte'
+
     const navItems = [
         {
             text: "Home",
@@ -6,43 +8,103 @@
         },
         {
             text: "About us",
-            href: "#"
+            href: "/about"
         },
         {
             text: "Tracking",
-            href: "#"
+            href: "/tracking"
         },
         {
             text: "Support",
-            href: "#"
+            href: "/support"
         },
         {
             text: "Contact",
-            href: "#"
+            href: "/contact"
         },
         {
             text: "More",
-            href: "#",
-            dropdown: true
+            menu: [
+                {
+                    text: "Services",
+                    menu: [
+                        {
+                            text: "Express Domestic Deliveries",
+                            href: "/services#express-domestic"
+                        },
+                        {
+                            text: "Economy RoadFreight",
+                            href: "/services#economy-road"
+                        },
+                        {
+                            text: "CrossBorder RoadFreight",
+                            href: "/services#cross-border-road"
+                        },
+                        {
+                            text: "International AirFreight",
+                            href: "/services#intl-air"
+                        },
+                        {
+                            text: "International Courier",
+                            href: "/services#intl-courier"
+                        },
+                        {
+                            text: "Valuable and Fragile Deliveries",
+                            href: "/services#fragile"
+                        },
+                        {
+                            text: "Dedicated Drive-Away Deliveries",
+                            href: "/services#dedicated-driveaway"
+                        },
+                        {
+                            text: "FCL's / LCL's",
+                            href: "/services#fcl-lcl"
+                        }
+                    ]
+                },
+                {
+                    text: "Shipping Tools",
+                    menu: [
+                        {
+                            text: "Packaging Guidelines",
+                            href: "/tools/packaging"
+                        },
+                        {
+                            text: "Customs Documents",
+                            href: "/tools/customs"
+                        },
+                        {
+                            text: "Dangerous Goods / Lithium Batteries",
+                            href: "/tools/dangerous"
+                        },
+                        {
+                            text: "Track a Shipment",
+                            href: "/tracking"
+                        },
+                        {
+                            text: "Book a Shipment",
+                            href: "/tools/book"
+                        }
+                    ]
+                },
+                {
+                    text: "FAQ",
+                    href: "/faq"
+                }
+            ]
         }
     ]
+
+    // array of indices
+    let shownMenus = [];
+
 </script>
 
 
 <nav>
     <ul>
         {#each navItems as item}
-            <li class="nav-item">
-                <a href="{item.href||"#"}">
-                    {item.text}
-                    {#if item.dropdown}
-                        <img 
-                            src="/images/icons/tri-down.svg" 
-                            alt="downward triangle" 
-                        />
-                    {/if}
-                </a>
-            </li>
+            <NavItem {item} />
         {/each}
     </ul>
 </nav>
@@ -57,36 +119,12 @@
         border-top: 15px solid var(--gray);
     }
 
-    nav ul {
+    nav > ul {
         padding: 0;
         list-style-type: none;
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 1rem;
-    }
-
-    nav ul a {
-        display: inline-block;
-        padding: 0.5rem 1rem;
-        border-radius: 0.25rem .5rem .25rem .5rem;
-        text-transform: uppercase;
-        background-image: linear-gradient(var(--slate), var(--slate));
-        color: var(--light);
-        font-weight: bold;
-        text-decoration: none;
-
-        transition: 125ms;
-    }
-
-    nav ul a:hover {
-        transform: scale(1.1);
-        background-image: linear-gradient(var(--slate), #555555);
-    }
-
-    .nav-item a {
-        display: flex;
-        align-items: center;
-        gap: 1ch;
     }
 </style>

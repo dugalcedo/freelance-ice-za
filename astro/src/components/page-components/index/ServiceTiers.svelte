@@ -80,8 +80,8 @@
     }
 
     .service-tier h3 {
-        background-color: var(--accent);
-        color: var(--light);
+        background-color: var(--accent2);
+        color: var(--slate);
         padding: 0.5rem;
         text-transform: uppercase;
         font-size: 1.3rem;

@@ -138,7 +138,7 @@
 
     .offer.active .icon {
         background-color: var(--light);
-        border: 4px solid var(--accent);
+        border: 4px solid var(--accent2);
         outline: 5px solid var(--light);
 
         margin-bottom: 1rem;

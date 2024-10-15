@@ -19,10 +19,10 @@ import WhatWeOffer from '../components/page-components/index/WhatWeOffer.svelte'
 	</head>
 	<body>
 		<ModalLoader modalIds={["termsAndConditions", "declarationOfWeights"]} client:load />
-		<Header />
+		<Header client:load />
 		<main>
-			<Hero client:load />
 			<HomeQuickQuoteSection client:load />
+			<Hero client:load />
 			<ServiceTiers />
 			<WhatWeOffer client:load />
 		</main>

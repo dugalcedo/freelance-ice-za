@@ -25,6 +25,7 @@ body, button, input, textarea, select, option {
     --light-gray: #bbbbbb;
     --gray: gray;
     --dark-gray: #383838;
+    --accent2: #25D365;
 
     /* sizes */
     --container-width: 1300px;
@@ -55,6 +56,9 @@ input, select, option {
 /* END CSS RESET */
 /* ------------- */
 /* SITE SPECIFIC */
+*:focus {
+    outline: 4px solid var(--accent2);
+}
 .container-inner {
     width: var(--container-width);
     max-width: 100%;
@@ -70,6 +74,17 @@ input, select, option {
 }
 .accent-btn:active {
     border: 3px inset var(--accent);
+}
+.accent2-btn {
+    background-color: var(--accent2);
+    border: 3px outset var(--accent2);
+    color: var(--slate);
+}
+.accent2-btn:hover {
+    filter: brightness(1.5);
+}
+.accent2-btn:active {
+    border: 3px inset var(--accent2);
 }
 .modal-backdrop {
     position: fixed;

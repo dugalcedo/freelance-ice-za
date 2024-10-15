@@ -14,7 +14,7 @@
     ]
 </script>
 
-<Carousel auto={10000}>
+<Carousel>
     {#each heroItems as item}
         <svelte:component this={item} />
     {/each}

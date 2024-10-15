@@ -1,0 +1,23 @@
+---
+import Header from "../components/layout-components/Header.svelte"
+import Footer from "../components/layout-components/Footer.svelte"
+import ServicesList from "../components/page-components/services/ServicesList.svelte"
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="stylesheet" href="/style/__global.css">
+		<meta name="generator" content={Astro.generator} />
+		<title>ICE</title>
+	</head>
+	<body>
+		<Header client:load />
+		<main>
+			<ServicesList client:load />
+		</main>
+		<Footer />
+	</body>
+</html>

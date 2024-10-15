@@ -23,8 +23,6 @@
         </div>
 
     </header>
-
-    <div class="accent-bg"></div>
 </div>
 
 
@@ -34,24 +32,13 @@
         background-color: var(--slate);
     }
 
-    #header-wrapper .accent-bg {
-        position: absolute;
-        right: 0;
-        top: 0;
-        z-index: 1;
-        height: 100%;
-        width: 50%;
-        background-color: var(--accent);
-        border-top: 15px solid var(--gray);
-    }
-
     header {
         display: flex;
     }
 
     :global(header > *) {
         position: relative;
-        z-index: 2;
+        z-index: 51;
     }
 
     header .logo {

@@ -135,7 +135,7 @@
     <div class="middle">
         <div class="middle-head">
             <h5>Packages</h5>
-            <button on:click={addPackage} type="button" class="accent-btn">
+            <button on:click={addPackage} type="button" class="accent2-btn">
                 + Add package
             </button>
         </div>
@@ -209,7 +209,7 @@
         position: relative;
         border-radius: 1rem .5rem 1rem .5rem;
         border: 5px solid var(--gray);
-        border-bottom: 15px solid var(--accent);
+        border-bottom: 15px solid var(--accent2);
         /* outline: 2px solid var(--accent); */
     }
 
