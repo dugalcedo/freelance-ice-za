@@ -1,0 +1,19 @@
+---
+import HTML from "./HTML.astro";
+import ModalLoader from "../modals/ModalLoader.svelte";
+import Header from "./Header.svelte";
+import Footer from "./Footer.svelte";
+const { 
+    title,
+    modalIds = ["termsAndConditions"]
+ } = Astro.props;
+---
+
+<HTML title={title}>
+	<ModalLoader modalIds={modalIds} client:load />
+	<Header client:load />
+	<main>
+		<slot />
+	</main>
+	<Footer client:load />
+</HTML>

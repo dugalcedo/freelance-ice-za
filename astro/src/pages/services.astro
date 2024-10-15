@@ -1,25 +1,9 @@
 ---
-import Header from "../components/layout-components/Header.svelte"
-import Footer from "../components/layout-components/Footer.svelte"
+import Layout from "../components/layout-components/Layout.astro"
 import ServicesList from "../components/page-components/services/ServicesList.svelte"
-import ModalLoader from "../components/modals/ModalLoader.svelte"
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="stylesheet" href="/style/__global.css">
-		<meta name="generator" content={Astro.generator} />
-		<title>ICE</title>
-	</head>
-	<body>
-		<ModalLoader modalIds={["termsAndConditions"]} client:load />
-		<Header client:load />
-		<main>
-			<ServicesList client:load />
-		</main>
-		<Footer />
-	</body>
-</html>
+
+<Layout title="ICExpress | Services">
+	<ServicesList client:load />
+</Layout>
