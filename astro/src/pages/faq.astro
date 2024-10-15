@@ -1,6 +1,7 @@
 ---
 import Header from "../components/layout-components/Header.svelte"
 import Footer from "../components/layout-components/Footer.svelte"
+import ModalLoader from "../components/modals/ModalLoader.svelte"
 ---
 
 <html lang="en">
@@ -13,6 +14,7 @@ import Footer from "../components/layout-components/Footer.svelte"
 		<title>ICE</title>
 	</head>
 	<body>
+		<ModalLoader modalIds={["termsAndConditions"]} client:load />
 		<Header client:load />
 		<main>
 			<h1>FAQ page</h1>

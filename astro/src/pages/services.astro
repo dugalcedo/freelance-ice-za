@@ -2,6 +2,7 @@
 import Header from "../components/layout-components/Header.svelte"
 import Footer from "../components/layout-components/Footer.svelte"
 import ServicesList from "../components/page-components/services/ServicesList.svelte"
+import ModalLoader from "../components/modals/ModalLoader.svelte"
 ---
 
 <html lang="en">
@@ -14,6 +15,7 @@ import ServicesList from "../components/page-components/services/ServicesList.sv
 		<title>ICE</title>
 	</head>
 	<body>
+		<ModalLoader modalIds={["termsAndConditions"]} client:load />
 		<Header client:load />
 		<main>
 			<ServicesList client:load />

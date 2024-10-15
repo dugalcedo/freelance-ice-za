@@ -1,4 +1,6 @@
 <script>
+    import { openModal } from '../../../modals/modalStore.svelte.js'
+
     export let pkg;
     // export let isLast;
     export let isOnly;
@@ -18,6 +20,18 @@
         if (newQty < 1) return;
         pkg.qty = newQty;
     }
+
+    function handleQtyBtn() {
+        openModal("number", {
+            min: 1,
+            max: 1e5,
+            def: pkg.qty,
+            onConfirm: (v) => {
+                pkg.qty = v;
+            }
+        })
+    }
+
 </script>
 
 <div class="package">
@@ -51,7 +65,9 @@
         <button on:click={()=>changeQtyBy(1)} type="button">
             <img src="/images/icons/plus.svg" alt="plus">
         </button>
-        Qty: {pkg.qty}
+        <button class="qty-btn" type="button" on:click={handleQtyBtn}>
+            Qty: {pkg.qty}
+        </button>
         <button on:click={()=>changeQtyBy(-1)} type="button">
             <img src="/images/icons/minus.svg" alt="minus">
         </button>
@@ -107,7 +123,7 @@
         gap: 0.5rem;
     }
 
-    .quantity button {
+    .quantity button:not(.qty-btn) {
         background-color: transparent;
         aspect-ratio: 1;
         padding: .25rem;

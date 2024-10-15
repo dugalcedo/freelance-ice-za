@@ -13,6 +13,11 @@
             description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate aliquid quam necessitatibus, voluptates eum quo ullam, vitae amet ipsum doloribus adipisci rerum eligendi nesciunt architecto, repellendus odit incidunt impedit. Molestiae, ratione assumenda! Tenetur sunt asperiores itaque hic repellendus! Tempore amet porro aliquam non nam nostrum reiciendis iusto laborum dolores numquam animi possimus quibusdam odio sunt cum, laboriosam voluptate blanditiis ea debitis officia corporis doloremque. Cupiditate aliquam incidunt ex, ducimus vitae qui id hic similique non consectetur aut obcaecati rem? Doloribus atque dolorem ducimus magnam aspernatur iusto obcaecati, eligendi quidem voluptatibus necessitatibus aut sequi tempore? Eligendi quisquam aliquam nulla minus temporibus."
         },
         {
+            id: "cross-border-road",
+            heading: "CrossBorder RoadFreight",
+            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate aliquid quam necessitatibus, voluptates eum quo ullam, vitae amet ipsum doloribus adipisci rerum eligendi nesciunt architecto, repellendus odit incidunt impedit. Molestiae, ratione assumenda! Tenetur sunt asperiores itaque hic repellendus! Tempore amet porro aliquam non nam nostrum reiciendis iusto laborum dolores numquam animi possimus quibusdam odio sunt cum, laboriosam voluptate blanditiis ea debitis officia corporis doloremque. Cupiditate aliquam incidunt ex, ducimus vitae qui id hic similique non consectetur aut obcaecati rem? Doloribus atque dolorem ducimus magnam aspernatur iusto obcaecati, eligendi quidem voluptatibus necessitatibus aut sequi tempore? Eligendi quisquam aliquam nulla minus temporibus."
+        },
+        {
             id: "intl-air",
             heading: "International AirFreight",
             description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate aliquid quam necessitatibus, voluptates eum quo ullam, vitae amet ipsum doloribus adipisci rerum eligendi nesciunt architecto, repellendus odit incidunt impedit. Molestiae, ratione assumenda! Tenetur sunt asperiores itaque hic repellendus! Tempore amet porro aliquam non nam nostrum reiciendis iusto laborum dolores numquam animi possimus quibusdam odio sunt cum, laboriosam voluptate blanditiis ea debitis officia corporis doloremque. Cupiditate aliquam incidunt ex, ducimus vitae qui id hic similique non consectetur aut obcaecati rem? Doloribus atque dolorem ducimus magnam aspernatur iusto obcaecati, eligendi quidem voluptatibus necessitatibus aut sequi tempore? Eligendi quisquam aliquam nulla minus temporibus."
@@ -53,23 +58,6 @@
         if (themeI >= themes.length) themeI = 0;
         return themes[themeI];
     }
-
-    const scrollToHash = () => {
-        const hash = window.location.hash;
-        console.log(hash)
-        const el = document.querySelector(hash);
-        if (!el) return;
-        const rect = el.getBoundingClientRect()
-        window.scrollTo(0, rect.top)
-    }
-
-    const ids = services.map(s => s.id);
-
-
-    onMount(()=>{
-        scrollToHash()
-        window.addEventListener("hashchange", scrollToHash)
-    });
 </script>
 
 <div id="services">

@@ -29,7 +29,7 @@
 <style>
     #header-wrapper {
         position: relative;
-        background-color: var(--slate);
+        background-color: var(--dark-gray);
     }
 
     header {

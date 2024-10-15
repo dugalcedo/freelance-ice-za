@@ -18,7 +18,7 @@ import WhatWeOffer from '../components/page-components/index/WhatWeOffer.svelte'
 		<title>ICE</title>
 	</head>
 	<body>
-		<ModalLoader modalIds={["termsAndConditions", "declarationOfWeights"]} client:load />
+		<ModalLoader modalIds={["termsAndConditions", "declarationOfWeights", "number", "generic"]} client:load />
 		<Header client:load />
 		<main>
 			<HomeQuickQuoteSection client:load />
@@ -26,6 +26,6 @@ import WhatWeOffer from '../components/page-components/index/WhatWeOffer.svelte'
 			<ServiceTiers />
 			<WhatWeOffer client:load />
 		</main>
-		<Footer />
+		<Footer client:load />
 	</body>
 </html>

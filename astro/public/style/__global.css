@@ -1,19 +1,4 @@
-/* FONTS */
-@font-face {
-    font-family: "Nexa";
-    src: url("../fonts/nexa_bold-webfont.ttf");
-    font-weight: bold;
-}
-@font-face {
-    font-family: "Nexa";
-    src: url("../fonts/nexa_light-webfont.ttf");
-    font-weight: normal;
-}
-body, button, input, textarea, select, option {
-    font-family: "Nexa", sans-serif;
-}
-/* END FONTS */
-/* --------- */
+@import "./_fonts.css";
 /* VARIABLES */
 :root {
     /* colors */
@@ -56,6 +41,22 @@ input, select, option {
 /* END CSS RESET */
 /* ------------- */
 /* SITE SPECIFIC */
+html, body {
+    min-height: 100vh;
+}
+body {
+    display: flex;
+    flex-direction: column;
+}
+main {
+    flex-grow: 1;
+}
+body, button, input, textarea, select, option {
+    font-family: "Ubuntu", sans-serif;
+}
+h1, h2, h3, h4, h5, h6, a, button, input[type="button"], input[type="submit"] {
+    font-family: "Nexa", sans-serif;
+}
 *:focus {
     outline: 4px solid var(--accent2);
 }
@@ -102,8 +103,8 @@ input, select, option {
 .modal-window {
     background-color: var(--light);
     max-height: 90%;
-    width: 1000px;
-    max-width: 90%;
+    min-width: 400px;
+    max-width: clamp(300px, 90%, 1000px);
 
     display: flex;
     flex-direction: column;
@@ -115,6 +116,7 @@ input, select, option {
     color: var(--light);
     padding: .5rem;
     display: flex;
+    gap: 1rem;
     align-items: center;
     justify-content: space-between;
 }

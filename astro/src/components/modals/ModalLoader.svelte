@@ -2,6 +2,8 @@
     import { fade } from 'svelte/transition';
     import TermsAndConditionsModal from './modals/TermsAndConditionsModal.svelte';
     import DeclarationOfWeightsModal from './modals/DeclarationOfWeightsModal.svelte';
+    import GenericModal from './modals/GenericModal.svelte';
+    import NumberModal from './modals/NumberModal.svelte';
     import { modalStore, closeModal } from './modalStore.svelte.js';
 
     // array of strings
@@ -9,7 +11,9 @@
 
     const allModals = {
         termsAndConditions: TermsAndConditionsModal,
-        declarationOfWeights: DeclarationOfWeightsModal
+        declarationOfWeights: DeclarationOfWeightsModal,
+        generic: GenericModal,
+        number: NumberModal
     }
 
 </script>
