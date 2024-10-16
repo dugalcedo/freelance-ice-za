@@ -1,114 +1,33 @@
 <script>
+    import { navItems, tabletNavItems } from './navMenus.js'
     import NavItem from './nav/NavItem.svelte'
+    import HeaderMobileNav from './HeaderMobileNav.svelte'
 
-    const navItems = [
-        {
-            text: "Home",
-            href: "/"
-        },
-        {
-            text: "About us",
-            href: "/about"
-        },
-        {
-            text: "Tracking",
-            href: "/tracking"
-        },
-        {
-            text: "Support",
-            href: "/support"
-        },
-        {
-            text: "Contact",
-            href: "/contact"
-        },
-        {
-            text: "More",
-            menu: [
-                {
-                    text: "Services",
-                    menu: [
-                        {
-                            text: "Express Domestic Deliveries",
-                            href: "/services#express-domestic"
-                        },
-                        {
-                            text: "Economy RoadFreight",
-                            href: "/services#economy-road"
-                        },
-                        {
-                            text: "CrossBorder RoadFreight",
-                            href: "/services#cross-border-road"
-                        },
-                        {
-                            text: "International AirFreight",
-                            href: "/services#intl-air"
-                        },
-                        {
-                            text: "International Courier",
-                            href: "/services#intl-courier"
-                        },
-                        {
-                            text: "Valuable and Fragile Deliveries",
-                            href: "/services#fragile"
-                        },
-                        {
-                            text: "Dedicated Drive-Away Deliveries",
-                            href: "/services#dedicated-driveaway"
-                        },
-                        {
-                            text: "FCL's / LCL's",
-                            href: "/services#fcl-lcl"
-                        }
-                    ]
-                },
-                {
-                    text: "Shipping Tools",
-                    menu: [
-                        {
-                            text: "Packaging Guidelines",
-                            href: "/tools/packaging"
-                        },
-                        {
-                            text: "Customs Documents",
-                            href: "/tools/customs"
-                        },
-                        {
-                            text: "Dangerous Goods / Lithium Batteries",
-                            href: "/tools/dangerous"
-                        },
-                        {
-                            text: "Track a Shipment",
-                            href: "/tracking"
-                        },
-                        {
-                            text: "Book a Shipment",
-                            href: "/tools/book"
-                        }
-                    ]
-                },
-                {
-                    text: "FAQ",
-                    href: "/faq"
-                }
-            ]
+    let w = 0;
+    let menu = navItems;
+    $: if (w) {
+        if (w >= 1100) {
+            menu = navItems;
+        } else {
+            menu = tabletNavItems;
         }
-    ]
-
-    // array of indices
-    let shownMenus = [];
-
+    }
 </script>
 
+<svelte:window bind:innerWidth={w} />
 
-<nav>
+
+<nav class="large">
     <ul>
-        {#each navItems as item}
+        {#each menu as item}
             <NavItem {item} />
         {/each}
     </ul>
 </nav>
 
+<nav class="xsmall">
+    <HeaderMobileNav />
+</nav>
 
 <style>
     nav {
@@ -119,6 +38,10 @@
         border-top: 15px solid var(--gray);
     }
 
+    nav.xsmall {
+        display: none;
+    }
+
     nav > ul {
         padding: 0;
         list-style-type: none;
@@ -126,5 +49,37 @@
         align-items: center;
         justify-content: center;
         gap: 1rem;
+    }
+
+    @media only screen and (max-width: 1360px) {
+        nav {
+            padding: 1rem 0rem;
+        }
+
+        nav > ul {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 0.5rem;
+        }
+
+        :global(nav > ul > li > a, nav > ul > li > button) {
+            width: 100%;
+        }
+    }
+
+    @media only screen and (max-width: 1100px) {
+        nav > ul {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    @media only screen and (max-width: 650px) {
+        nav.large {
+            display: none;
+        }
+
+        nav.xsmall {
+            display: flex;
+        }
     }
 </style>
