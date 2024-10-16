@@ -62,8 +62,13 @@ h1, h2, h3, h4, h5, h6, a, button, input[type="button"], input[type="submit"] {
 }
 .container-inner {
     width: var(--container-width);
-    max-width: 100%;
+    max-width: calc(100% - 4rem);
     margin: auto;
+}
+@media only screen and (max-width: 500px) {
+    .container-inner {
+        max-width: calc(100% - 2rem);
+    }
 }
 .accent-btn {
     background-color: var(--accent);

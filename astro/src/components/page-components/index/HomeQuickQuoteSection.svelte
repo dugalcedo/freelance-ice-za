@@ -4,7 +4,7 @@
 
 <section class="container-outer" id="home-quick-quote">
     <section class="container-inner">
-        <div>
+        <div class="text">
             <h2>Get an instant quote</h2>
             <p>
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus possimus ullam odit. Assumenda, soluta veritatis optio alias perferendis sint veniam facilis aliquid quos! Debitis omnis suscipit obcaecati quaerat eius temporibus, officia facere adipisci quidem rem, optio ea soluta totam laboriosam!
@@ -28,7 +28,7 @@
         padding: 4rem 0rem;
     }
 
-    #home-quick-quote > .container-inner {
+    .container-inner {
         display: grid;
         position: relative;
         z-index: 2;
@@ -47,5 +47,18 @@
     #truck {
         top: 5%;
         left: 5%;
+    }
+
+    @media only screen and (max-width: 1100px) {
+        .container-inner {
+            display: flex;
+            flex-direction: column;
+            align-content: inherit;
+        }
+
+        .text {
+            width: 700px;
+            max-width: 100%;
+        }
     }
 </style>

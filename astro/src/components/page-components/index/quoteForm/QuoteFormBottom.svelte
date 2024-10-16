@@ -109,4 +109,50 @@
         position: relative;
         top: -2px;
     }
+
+    @media only screen and (max-width: 700px) {
+        .ins-desc-val {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .ins-desc-val .field {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            width: 100%;
+        }
+
+        .money {
+            display: flex;
+            gap: .5rem;
+        }
+
+        .money input {
+            flex-grow: 1;
+        }
+    }
+
+    @media only screen and (max-width: 450px) {
+        .ins-desc-val > .field:not(:first-child) {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .ins-desc-val .field textarea {
+            width: 100%;
+        }
+
+        .money {
+            width: 100%;
+        }
+
+        .agreements .field {
+            display: grid;
+            grid-template-columns: 1fr 5fr;
+        }
+        .agreements .field button {
+            grid-column: span 2;
+        }
+    }
 </style>

@@ -61,4 +61,11 @@
     :global(.packages > .package:nth-child(even)) {
         background-color: rgba(0, 0, 0, 0.2);
     }
+
+    @media only screen and (max-width: 500px) {
+        .middle-head {
+            text-align: left;
+            padding-left: 2rem;
+        }
+    }
 </style>

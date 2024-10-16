@@ -62,13 +62,13 @@
         </div>
     </div>
     <div class="quantity">
-        <button on:click={()=>changeQtyBy(1)} type="button">
+        <button on:click={()=>changeQtyBy(1)} type="button" class="plus">
             <img src="/images/icons/plus.svg" alt="plus">
         </button>
         <button class="qty-btn" type="button" on:click={handleQtyBtn}>
             Qty: {pkg.qty}
         </button>
-        <button on:click={()=>changeQtyBy(-1)} type="button">
+        <button on:click={()=>changeQtyBy(-1)} type="button" class="minus">
             <img src="/images/icons/minus.svg" alt="minus">
         </button>
     </div>
@@ -142,5 +142,91 @@
 
     .del:hover {
         background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    @media only screen and (max-width: 600px) and (min-width: 451px) {
+        .package:not(:has(.del)) {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+        }
+
+        .package:not(:has(.del)) .dimensions {
+            order: 2;
+        }
+
+        .package:not(:has(.del)) .quantity {
+            grid-row: span 2;
+        }
+
+        .package:has(.del) {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+        }
+
+        .package:has(.del) .type {
+            grid-column: span 3;
+        }
+
+        .package:has(.del) .quantity {
+            grid-column: span 3;
+            flex-direction: row;
+        }
+
+        .package:has(.del) .dimensions {
+            grid-column: span 5;
+            order: 2;
+        }
+
+        .package:has(.del) .del {
+            grid-column: span 1;
+            order: 2;
+        }
+
+        .package:has(.del) .minus {
+            order: -1;
+        }
+
+        .package:has(.del) .plus {
+            order: 2;
+        }
+    }
+
+    @media only screen and (max-width: 450px) {
+        .package {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: .5rem;
+        }
+
+        .type {
+            display: flex;
+            flex-direction: column;
+            grid-column: span 3;
+        }
+
+        .quantity {
+            flex-direction: row;
+            grid-column: span 3;
+        }
+
+        .plus {
+            order: 2;
+        }
+
+        .minus {
+            order: -1;
+        }
+
+        .dimensions {
+            grid-column: span 5;
+            order: 2;
+        }
+
+        .del {
+            grid-column: span 1;
+            order: 3;
+            aspect-ratio: unset;
+            padding: .25rem;
+        }
     }
 </style>

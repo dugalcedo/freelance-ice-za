@@ -71,4 +71,20 @@
     .active img {
         filter: invert(1);
     }
+
+    @media only screen and (max-width: 700px) {
+        .int-or-dom {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .int-or-dom button {
+            font-size: 1rem;
+            padding: .25rem;
+        }
+
+        .int-or-dom button img {
+            width: 20px !important;
+        }
+    }
 </style>

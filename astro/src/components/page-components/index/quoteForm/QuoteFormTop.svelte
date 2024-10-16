@@ -121,4 +121,10 @@
         color: var(--light) !important;
         border: 4px inset var(--accent) !important;
     }
+
+    @media only screen and (max-width: 600px) {
+        .top-fields {
+            grid-template-columns: 1fr;
+        }
+    }
 </style>

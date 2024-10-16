@@ -135,6 +135,7 @@ ${JSON.stringify(formData, null, 2)}
 <style>
     form {
         width: 700px;
+        max-width: 100%;
         background-color: #ebebeb;
         color: var(--slate);
         /* padding: 1rem; */

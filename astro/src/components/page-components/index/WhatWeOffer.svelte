@@ -66,6 +66,8 @@
         background-image: linear-gradient(125deg, var(--accent), var(--accent-light));
         padding: 6rem 0rem;
         position: relative;
+        width: 100vw;
+        overflow: hidden;
     }
 
     .bg {
