@@ -229,4 +229,14 @@
             padding: .25rem;
         }
     }
+
+    @media only screen and (max-width: 359px) {
+        .package, .package * {
+            font-size: 0.7rem !important;
+        }
+
+        .package button {
+            padding: .25rem;
+        }
+    }
 </style>

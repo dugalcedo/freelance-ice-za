@@ -37,17 +37,17 @@
     }
 
     .mobile-menu {
+        width: 100%;
         position: absolute;
         top: 100%;
-        right: 1rem;
-        background-color: var(--light);
+        background-color: var(--accent);
         padding: 0;
-        border-right: 10px solid var(--slate);
+        border-right: 10px solid var(--light);
     }
 
     .mobile-menu a {
         font-weight: bold;
-        color: var(--slate);
+        color: var(--light);
         text-decoration: none;
         display: block;
         text-align: right;

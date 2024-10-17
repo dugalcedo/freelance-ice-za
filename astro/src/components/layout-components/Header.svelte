@@ -26,6 +26,17 @@
         </div>
 
     </header>
+
+    <div class="mobile-contact">
+        <div>
+            <img src="/images/icons/phone.svg" alt="phone icon">
+            <p>031 0300 300</p>
+            <p>
+                086 9990 559
+                <small>(intl.)</small>
+            </p>
+        </div>
+    </div>
 </div>
 
 
@@ -76,6 +87,10 @@
         display: none;
     }
 
+    .mobile-contact {
+        display: none;
+    }
+
     @media only screen and (max-width: 940px) {
         .logo.large {
             display: none;
@@ -98,20 +113,51 @@
     @media only screen and (max-width: 650px) {
         header {
             display: grid;
-            grid-template-columns: 1fr 3fr 1fr;
+            grid-template-columns: 1fr 100px;
         }
 
-        .contact {
-            order: 0;
+        header .contact {
+            display: none;
         }
 
         :global(header nav) {
             order: 1;
         }
+
+        .logo.small {
+            display: none;
+        }
+
+        .logo.large {
+            display: block;
+            position: relative;
+        }
+
+        .mobile-contact {
+            display: flex;
+            justify-content: center;
+            background-color: var(--accent2);
+        }
+
+        .mobile-contact img {
+            filter: invert(1);
+        }
+
+        .mobile-contact > div {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            color: var(--slate);
+            font-weight: bold;
+            padding: .25rem;
+        }
     }
 
-    @media only screen and (max-width: 450px) {
-        .contact img {
+    @media only screen and (max-width: 475px) {
+        .logo.small {
+            display: flex;
+        }
+        .logo.large {
             display: none;
         }
     }

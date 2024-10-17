@@ -162,4 +162,14 @@
             align-items: center;
         }
     }
+
+    @media only screen and (max-width: 450px) {
+        footer {
+            padding: 1rem;
+        }
+
+        .social img {
+            width: 35px;
+        }
+    }
 </style>
