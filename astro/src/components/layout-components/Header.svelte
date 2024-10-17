@@ -109,4 +109,10 @@
             order: 1;
         }
     }
+
+    @media only screen and (max-width: 450px) {
+        .contact img {
+            display: none;
+        }
+    }
 </style>

@@ -58,6 +58,7 @@
     #service-tiers {
         display: flex;
         justify-content: center;
+        align-items: center;
         gap: 2rem;
         padding: 10rem 0rem;
     }
@@ -115,5 +116,11 @@
     .service-tier a {
         display: block;
         text-align: right;
+    }
+
+    @media only screen and (max-width: 950px) {
+        #service-tiers {
+            flex-direction: column;
+        }
     }
 </style>

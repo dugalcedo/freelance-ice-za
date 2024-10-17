@@ -64,15 +64,15 @@ const navItems = [
                 menu: [
                     {
                         text: "Packaging Guidelines",
-                        href: "/tools/packaging"
+                        href: "/tools#packaging"
                     },
                     {
                         text: "Customs Documents",
-                        href: "/tools/customs"
+                        href: "/tools#customs"
                     },
                     {
                         text: "Dangerous Goods / Lithium Batteries",
-                        href: "/tools/dangerous"
+                        href: "/tools#dangerous"
                     },
                     {
                         text: "Track a Shipment",
@@ -80,7 +80,7 @@ const navItems = [
                     },
                     {
                         text: "Book a Shipment",
-                        href: "/tools/book"
+                        href: "/tools#book"
                     }
                 ]
             },
@@ -158,15 +158,15 @@ const tabletNavItems = [
                 menu: [
                     {
                         text: "Packaging Guidelines",
-                        href: "/tools/packaging"
+                        href: "/tools#packaging"
                     },
                     {
                         text: "Customs Documents",
-                        href: "/tools/customs"
+                        href: "/tools#customs"
                     },
                     {
                         text: "Dangerous Goods / Lithium Batteries",
-                        href: "/tools/dangerous"
+                        href: "/tools#dangerous"
                     },
                     {
                         text: "Track a Shipment",
@@ -174,7 +174,7 @@ const tabletNavItems = [
                     },
                     {
                         text: "Book a Shipment",
-                        href: "/tools/book"
+                        href: "/tools#book"
                     }
                 ]
             },
@@ -186,7 +186,43 @@ const tabletNavItems = [
     }
 ];
 
+const mobileNavItems = [
+    {
+        text: "Home",
+        href: "/"
+    },
+    {
+        text: "About us",
+        href: "/about"
+    },
+    {
+        text: "Tracking",
+        href: "/tracking"
+    },
+    {
+        text: "Support",
+        href: "/support"
+    },
+    {
+        text: "Contact",
+        href: "/contact"
+    },
+    {
+        text: "FAQ",
+        href: "/faq"
+    },
+    {
+        text: "Services",
+        href: "/services"
+    },
+    {
+        text: "Shipping tools",
+        href: "/tools"
+    }
+]
+
 export {
     navItems,
-    tabletNavItems
+    tabletNavItems,
+    mobileNavItems
 }

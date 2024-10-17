@@ -5,6 +5,7 @@
     export let width = "100%"
     // ar: aspect ratio of the carousel to 1
     export let ar = 3
+    export let height = undefined;
     // display: 
     export let display = "block";
     // speed: ms transition
@@ -115,7 +116,11 @@
     class="carousel"
     style="
         width: {width};
-        aspect-ratio: {ar}/1;
+        {height ? `
+            height: ${height};
+        `:`
+            aspect-ratio: ${ar}/1;
+        `}
         display: {mounting ? "none" : display};
     "
 >

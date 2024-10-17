@@ -14,7 +14,7 @@
     ]
 </script>
 
-<Carousel>
+<Carousel height="650px">
     {#each heroItems as item}
         <svelte:component this={item} />
     {/each}

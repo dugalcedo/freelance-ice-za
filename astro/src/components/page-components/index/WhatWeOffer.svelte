@@ -42,7 +42,7 @@
         <h2>What we offer</h2>
         <div class="offers">
             {#each offers as offer, i}
-                <div class="offer" class:active={activeIconIndex === i}>
+                <a class="offer" class:active={activeIconIndex === i} href="/offers">
                     <div 
                         class="icon"
                         on:mouseover={()=>resetInterval(i)}
@@ -55,7 +55,7 @@
                     <p>
                         {offer.title}
                     </p>
-                </div>
+                </a>
             {/each}
         </div>
     </section>
@@ -107,6 +107,7 @@
         flex-direction: column;
         align-items: center;
         opacity: 0.8;
+        text-decoration: none;
     }
 
     .offer p {
@@ -162,5 +163,17 @@
 
     .offer, .offer .icon, .offer img, .offer p {
         transition: all 1s;
+    }
+
+    @media only screen and (max-width: 650px) {
+        .offers {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    @media only screen and (max-width: 400px) {
+        .offers {
+            grid-template-columns: 1fr;
+        }
     }
 </style>

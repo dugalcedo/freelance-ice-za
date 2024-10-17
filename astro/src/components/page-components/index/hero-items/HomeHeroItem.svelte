@@ -37,4 +37,18 @@
     :global(.home-hero-item *) {
         text-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
     }
+
+    @media only screen and (max-width: 750px) {
+        .home-hero-item {
+            max-width: unset;
+            width: 100vw;
+            top: 0;
+            left: 0;
+            border-radius: 0;
+            height: 100%;
+            background-color: transparent;
+            background-image: linear-gradient(rgba(0,0,0,0.7), transparent);
+            text-align: center;
+        }
+    }
 </style>
