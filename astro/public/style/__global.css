@@ -10,8 +10,9 @@
     --light-gray: #bbbbbb;
     --gray: gray;
     --dark-gray: #383838;
-    --accent2: #25D365;
-
+    /* --accent2: #25D365; */
+    --accent2: #007A4D;
+    
     /* sizes */
     --container-width: 1300px;
 }
@@ -56,9 +57,6 @@ body, button, input, textarea, select, option {
 }
 h1, h2, h3, h4, h5, h6, a, button, input[type="button"], input[type="submit"] {
     font-family: "Nexa", sans-serif;
-}
-*:focus {
-    outline: 4px solid var(--accent2);
 }
 .container-inner {
     width: var(--container-width);
@@ -108,7 +106,6 @@ h1, h2, h3, h4, h5, h6, a, button, input[type="button"], input[type="submit"] {
 .modal-window {
     background-color: var(--light);
     max-height: 90%;
-    min-width: 400px;
     max-width: clamp(300px, 90%, 1000px);
 
     display: flex;
@@ -129,4 +126,33 @@ h1, h2, h3, h4, h5, h6, a, button, input[type="button"], input[type="submit"] {
     flex-grow: 1;
     overflow-y: auto;
     padding: 1rem;
+}
+
+.tri-col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.tri-col>*{
+    display: flex;
+    align-items: center;
+}
+.tri-col>.left {
+    justify-content: flex-start;
+}
+.tri-col>.center {
+    justify-content: center;
+}
+.tri-col>.right {
+    justify-content: flex-end;
+}
+.desktop {
+    display: none !important;
+}
+@media only screen and (min-width: 800px) {
+    .desktop {
+        display: block !important;
+    }        
+    .mobile {
+        display: none !important;
+    }
 }

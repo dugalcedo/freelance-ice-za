@@ -1,9 +1,9 @@
 ---
 import Hero from "../components/page-components/index/Hero.svelte"
-import HomeQuickQuoteSection from "../components/page-components/index/HomeQuickQuoteSection.svelte"
 import ServiceTiers from '../components/page-components/index/ServiceTiers.svelte'
 import WhatWeOffer from '../components/page-components/index/WhatWeOffer.svelte'
 import Layout from "../components/layout-components/Layout.astro"
+import QuickQuoteForm from "../components/forms/QuickQuoteForm/QuickQuoteForm.svelte"
 ---
 
 <Layout title="ICExpress" modalIds={[
@@ -12,10 +12,14 @@ import Layout from "../components/layout-components/Layout.astro"
 	"generic",
 	"number"
 ]}>
-	<HomeQuickQuoteSection client:load />
-	<Hero client:load />
-	<ServiceTiers />
-	<WhatWeOffer client:load />
+	<div slot="hero">
+		<QuickQuoteForm client:load />
+	</div>
+	<main slot="main">
+		<Hero client:load />
+		<ServiceTiers />
+		<WhatWeOffer client:load />
+	</main>
 </Layout>
 
 

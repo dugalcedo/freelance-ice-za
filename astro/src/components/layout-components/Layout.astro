@@ -1,7 +1,7 @@
 ---
 import HTML from "./HTML.astro";
 import ModalLoader from "../modals/ModalLoader.svelte";
-import Header from "./Header.svelte";
+import HeaderAndHero from "./HeaderAndHero.svelte";
 import Footer from "./Footer.svelte";
 const { 
     title,
@@ -11,9 +11,11 @@ const {
 
 <HTML title={title}>
 	<ModalLoader modalIds={modalIds} client:load />
-	<Header client:load />
-	<main>
-		<slot />
-	</main>
+	<HeaderAndHero client:load>
+		<slot name="hero" />
+	</HeaderAndHero>
+
+	<slot name="main" />
+
 	<Footer client:load />
 </HTML>
