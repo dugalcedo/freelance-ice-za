@@ -4,6 +4,7 @@
     import DeclarationOfWeightsModal from './modals/DeclarationOfWeightsModal.svelte';
     import GenericModal from './modals/GenericModal.svelte';
     import NumberModal from './modals/NumberModal.svelte';
+    import ContactModal from './modals/ContactModal.svelte';
     import { modalStore, closeModal } from './modalStore.svelte.js';
 
     // array of strings
@@ -13,7 +14,8 @@
         termsAndConditions: TermsAndConditionsModal,
         declarationOfWeights: DeclarationOfWeightsModal,
         generic: GenericModal,
-        number: NumberModal
+        number: NumberModal,
+        contact: ContactModal
     }
 
 </script>

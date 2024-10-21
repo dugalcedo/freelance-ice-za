@@ -1,11 +1,19 @@
 <script>
     import Logo from '../Logo.svelte';
     import HeaderMenu from './HeaderMenu.svelte';
+    import { openModal } from '../../modals/modalStore.svelte.js';
 
     let menuShown = false;
 
     const showMenu = () => {
         menuShown = true;
+    }
+
+    const handleContactClick = () => {
+        if (window.innerWidth <= 1150) {
+            console.log('test')
+            openModal("contact")
+        }
     }
 </script>
 
@@ -20,7 +28,13 @@
 
     <!-- center -->
     <div class="contact-wrapper center">
-        <div class="contact contact-desktop desktop">
+        <div 
+            class="contact"
+            on:click={handleContactClick}
+            on:keypress={handleContactClick}
+            tabindex="-1"
+            role="button"
+        >
             <div class="phone">
                 <img src="/images/icons/phone.svg" alt="phone icon">
                 <p>031 0300 300</p>
@@ -116,5 +130,19 @@
         display: block;
     }
 
-    
+    @media only screen and (max-width: 1150px) {
+        .contact {
+            cursor: pointer;
+            transition: .5s;
+        }
+
+        .contact:hover {
+            filter: brightness(1.2);
+            padding: 1rem;
+        }
+
+        .phone p, .email a {
+            display: none;
+        }
+    }
 </style>

@@ -3,19 +3,26 @@ import HTML from "./HTML.astro";
 import ModalLoader from "../modals/ModalLoader.svelte";
 import HeaderAndHero from "./HeaderAndHero.svelte";
 import Footer from "./Footer.svelte";
+
+const layoutModalIds = ["termsAndConditions", "contact"]
+
 const { 
     title,
-    modalIds = ["termsAndConditions"]
+    modalIds = []
  } = Astro.props;
+
+ const ids = [...layoutModalIds, modalIds]
 ---
 
 <HTML title={title}>
-	<ModalLoader modalIds={modalIds} client:load />
+	<ModalLoader modalIds={ids} client:load />
 	<HeaderAndHero client:load>
 		<slot name="hero" />
 	</HeaderAndHero>
 
-	<slot name="main" />
+	<main>
+		<slot />
+	</main>
 
 	<Footer client:load />
 </HTML>

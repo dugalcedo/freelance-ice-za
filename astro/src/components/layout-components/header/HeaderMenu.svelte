@@ -3,11 +3,14 @@
     import Icon from "../../reusable-components/Icon.svelte";
     import headerMenu from "./headerMenu.js";
 
+
     export let shown = false;
 
     const hide = () => {
         shown = false;
     }
+
+
 </script>
 
 {#if shown}
@@ -20,6 +23,7 @@
         role="button"
     >
         <nav id="header-menu" transition:slide>
+            <img src="/images/logo.webp" alt="ICE Logo" class="logo">
             <button class="close square" on:click={hide}>
                 <Icon name="close" />
             </button>
@@ -45,7 +49,7 @@
 
 <style>
     #header-menu-backdrop {
-        position: absolute;
+        position: fixed;
         z-index: 10000;
         top: 0;
         left: 0;
@@ -64,6 +68,19 @@
         display: flex;
         flex-direction: column;
         align-items: flex-end;
+
+        position: fixed;
+        top: 0px;
+        right: 0px;
+
+        width: 100%;
+    }
+
+    #header-menu .logo {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 50px;
     }
 
     .close {
@@ -98,7 +115,7 @@
     .nav-items a:hover + .bg,
     .nav-items button:focus + .bg,
     .nav-items a:focus + .bg {
-        width: 100vw;
+        width: 100%;
     }
 
     .nav-items button {
@@ -117,6 +134,14 @@
         display: inline-block;
         border-right: 5px solid var(--accent2);
         padding: .5rem 1rem;
+    }
+
+    @media only screen and (min-width: 650px) {
+        #header-menu {
+            width: unset;
+            min-width: 250px;
+            border-radius: 0 0 0 1rem;
+        }
     }
 
 </style>
