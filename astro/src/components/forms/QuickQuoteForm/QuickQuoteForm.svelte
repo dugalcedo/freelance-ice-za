@@ -1,13 +1,25 @@
 <script>
     import { slide } from 'svelte/transition';
     import { formData, collectionTypes, addPackage } from './quickQuoteStore.svelte.js';
-    import { openModal } from '../../modals/modalStore.svelte.js';
+    import { openModal, openGenericModal } from '../../modals/modalStore.svelte.js';
     import Field from '../Field.svelte';
     import Icon from '../../reusable-components/Icon.svelte';
     import MobilePackageList from './PackageList.svelte';
+    import { isPreview } from '../../../assets/util/index.js';
+
+    const handleSubmit = () => {
+        if (isPreview()) {
+            openGenericModal(
+                "This window only appears in preview mode",
+                "Here is the data collected from the form: <br><pre>" + JSON.stringify($formData, null, 2) + "</pre>"
+            )
+        } else {
+
+        }
+    }
 </script>
 
-<form class="quick-quote">
+<form class="quick-quote" on:submit|preventDefault={handleSubmit}>
     <!-- shipment type toggles -->
     <section class="shipment-type">
 
@@ -285,6 +297,11 @@
 
     .submit:hover {
         filter: brightness(1.5);
+    }
+
+    .bottom textarea {
+        resize: none;
+        height: 8ch;
     }
 
     /* TABLET SIZE */

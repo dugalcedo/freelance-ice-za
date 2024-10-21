@@ -1,5 +1,12 @@
 <script>
     import Logo from '../Logo.svelte';
+    import HeaderMenu from './HeaderMenu.svelte';
+
+    let menuShown = false;
+
+    const showMenu = () => {
+        menuShown = true;
+    }
 </script>
 
 <header class="tri-col">
@@ -30,12 +37,14 @@
     <!-- right -->
     <div class="nav-wrapper right">
         <nav class="main-nav">
-            <button class="burger">
+            <button class="burger" on:click={showMenu}>
                 <img src="/images/icons/menu.svg" alt="Menu icon">
             </button>
         </nav>
     </div>
 </header>
+
+<HeaderMenu bind:shown={menuShown} />
 
 <style>
     header {

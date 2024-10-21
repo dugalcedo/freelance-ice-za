@@ -10,8 +10,5 @@ export const clickOutside = (n, cb) => {
 }
 
 export const isPreview = () => {
-    return (
-        window.location.href.includes("localhost")
-        || window.location.href.includes("github")
-    )
+    return !window.location.href.includes('.za')
 }

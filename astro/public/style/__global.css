@@ -148,6 +148,9 @@ h1, h2, h3, h4, h5, h6, a, button, input[type="button"], input[type="submit"] {
 .desktop {
     display: none !important;
 }
+button.square {
+    padding: .5rem;
+}
 @media only screen and (min-width: 800px) {
     .desktop {
         display: block !important;
