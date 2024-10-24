@@ -66,9 +66,10 @@
         background-image: linear-gradient(125deg, var(--accent), var(--accent-light));
         padding: 6rem 0rem;
         position: relative;
-        width: 100vw;
-        overflow: hidden;
+        width: 100%;
+        overflow-x: hidden;
     }
+
 
     .bg {
         height: 80%;

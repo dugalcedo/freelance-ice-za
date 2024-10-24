@@ -35,7 +35,16 @@
             <button 
                 type="button" 
                 class:active={$formData.isInternational}
-                on:click={() => $formData.isInternational = true}
+                on:click={() => {
+                    $formData.isInternational = true
+                    if ($formData.isImport) {
+                        $formData.fromCountry = ""
+                        $formData.toCountry = "South Africa"
+                    } else {
+                        $formData.fromCountry = "South Africa"
+                        $formData.toCountry = ""
+                    }
+                }}
             >
                 <Icon name="world" width="25px" />
                 INTL
@@ -48,14 +57,22 @@
                 <button 
                     type="button" 
                     class:active={$formData.isImport}
-                    on:click={() => $formData.isImport = true}
+                    on:click={() => {
+                        $formData.isImport = true
+                        $formData.fromCountry = ""
+                        $formData.toCountry = "South Africa"
+                    }}
                 >
                     IMPORT
                 </button>
                 <button 
                     type="button" 
                     class:active={!$formData.isImport}
-                    on:click={() => $formData.isImport = false}
+                    on:click={() => {
+                        $formData.isImport = false
+                        $formData.fromCountry = "South Africa"
+                        $formData.toCountry = ""
+                    }}
                 >
                     EXPORT
                 </button>

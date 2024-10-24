@@ -1,5 +1,6 @@
 <script>
     import { formData, packageTypes, changePackageQty, removePackage } from "./quickQuoteStore.svelte.js";
+    import { openModal, closeModal } from "../../modals/modalStore.svelte.js";
     import Field from "../Field.svelte";
     import Icon from "../../reusable-components/Icon.svelte";
     import { slide } from "svelte/transition";
@@ -69,7 +70,15 @@
                 <button type="button" on:click={() => changePackageQty(i, -1)}>
                     <Icon name="minus"/>
                 </button>
-                <button type="button">
+                <button type="button" class="qty-btn" on:click={() => {
+                    openModal("number", {
+                        min: 1,
+                        max: 1000,
+                        onConfirm(v) {
+                            $formData.packages[i].qty = v;
+                        }
+                    })
+                }}>
                     {$formData.packages[i].qty}
                 </button>
                 <button type="button" on:click={() => changePackageQty(i, 1)}>
@@ -158,8 +167,20 @@
         gap: .5rem;
     }
 
-    .quantity button {
-        padding: .25rem;
+    .quantity > button {
+        padding: .5rem;
+        border-radius: 50%;
+    }
+
+    .qty-btn {
+        display: inline-block;
+        width: 2rem;
+        height: 2rem;
+    
+    }
+
+    .quantity button:hover {
+        background-color: rgba(255, 255, 255, 0.2);
     }
 
     /* TABLET RULES */

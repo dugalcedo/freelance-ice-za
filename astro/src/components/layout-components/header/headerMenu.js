@@ -7,6 +7,8 @@
  * @property {Function | null} fn 
  */
 
+import { openModal } from "../../modals/modalStore.svelte.js";
+
 /** @type MenuItem[] */
 const headerMenu = [
     {
@@ -17,7 +19,9 @@ const headerMenu = [
     {
         text: "Login",
         href: null,
-        fn: () => {}
+        fn: () => {
+            openModal("auth")
+        }
     },
     {
         text: "Tracking",

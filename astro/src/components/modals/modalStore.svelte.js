@@ -11,7 +11,7 @@ const modalStore = writable({
 });
 
 const openModal = (id, options) => {
-    console.log('opening')
+    console.log('opening modal:', id, options)
     modalStore.update($ => {
 
         // update ids

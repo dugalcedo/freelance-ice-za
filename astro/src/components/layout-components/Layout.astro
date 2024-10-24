@@ -2,16 +2,17 @@
 import HTML from "./HTML.astro";
 import ModalLoader from "../modals/ModalLoader.svelte";
 import HeaderAndHero from "./HeaderAndHero.svelte";
-import Footer from "./Footer.svelte";
+import Footer from "./footer/Footer.svelte";
 
-const layoutModalIds = ["termsAndConditions", "contact"]
+const deafaultModalIds = ["termsAndConditions", "contact", "auth"]
 
 const { 
     title,
     modalIds = []
  } = Astro.props;
 
- const ids = [...layoutModalIds, modalIds]
+ const ids = [...deafaultModalIds, ...modalIds]
+
 ---
 
 <HTML title={title}>

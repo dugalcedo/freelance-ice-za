@@ -53,7 +53,7 @@
         z-index: 10000;
         top: 0;
         left: 0;
-        width: 100vw;
+        width: 100%;
         height: 100dvh;
 
         background-color: rgba(0, 0, 0, 0.3);

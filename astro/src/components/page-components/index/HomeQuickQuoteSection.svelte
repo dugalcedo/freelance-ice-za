@@ -1,5 +1,5 @@
 <script>
-    import QuoteForm from './quoteForm/QuoteForm.svelte'
+    import QuoteForm from './OLD quoteform/QuoteForm.svelte'
 </script>
 
 <section class="container-outer" id="home-quick-quote">

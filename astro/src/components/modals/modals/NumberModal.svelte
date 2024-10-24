@@ -1,5 +1,6 @@
 <script>
-    import { closeModal, modalStore } from '../modalStore.svelte.js';
+    import { modalStore, closeModal } from '../modalStore.svelte.js';
+    import ModalLayout from '../ModalLayout.svelte';
     let val = $modalStore.def;
     let errMsg = "";
 
@@ -24,13 +25,8 @@
     let submitBtn;
 </script>
 
-<div class="modal-window">
-    <div class="head">
-        <h2>Enter a number</h2>
-        <button on:click={closeModal}>
-            X
-        </button>
-    </div>
+
+<ModalLayout heading="Enter a number">
     <div class="body">
         <input type="text" bind:value={val} on:keypress={e => {
             if (e.key === "Enter") submitBtn.click();
@@ -42,7 +38,7 @@
             {errMsg}
         </div>
     </div>
-</div>
+</ModalLayout>
 
 <style>
     .body {

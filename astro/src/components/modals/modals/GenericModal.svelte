@@ -1,15 +1,9 @@
 <script>
-    import { modalStore, closeModal } from '../modalStore.svelte.js'
+    import { modalStore } from '../modalStore.svelte.js'
+    import ModalLayout from '../ModalLayout.svelte';
 </script>
 
-<div class="modal-window">
-    <div class="head">
-        <h2>{@html $modalStore.heading || "Generic modal"}</h2>
-        <button on:click={closeModal}>
-            X
-        </button>
-    </div>
-    <div class="body">
-        <p>{@html $modalStore.body || "Generic modal"}</p>
-    </div>
-</div>
+
+<ModalLayout heading={$modalStore.heading}>
+    <p>{@html $modalStore.body || "Generic modal"}</p>
+</ModalLayout>

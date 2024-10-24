@@ -1,11 +1,12 @@
 <script>
     import { fade } from 'svelte/transition';
+    import { modalStore, closeModal } from './modalStore.svelte.js';
     import TermsAndConditionsModal from './modals/TermsAndConditionsModal.svelte';
     import DeclarationOfWeightsModal from './modals/DeclarationOfWeightsModal.svelte';
     import GenericModal from './modals/GenericModal.svelte';
     import NumberModal from './modals/NumberModal.svelte';
     import ContactModal from './modals/ContactModal.svelte';
-    import { modalStore, closeModal } from './modalStore.svelte.js';
+    import AuthModal from './modals/AuthModal.svelte';
 
     // array of strings
     export let modalIds = [];
@@ -15,7 +16,8 @@
         declarationOfWeights: DeclarationOfWeightsModal,
         generic: GenericModal,
         number: NumberModal,
-        contact: ContactModal
+        contact: ContactModal,
+        auth: AuthModal
     }
 
 </script>
