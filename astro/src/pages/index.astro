@@ -13,6 +13,7 @@ import QuickQuoteForm from "../components/forms/QuickQuoteForm/QuickQuoteForm.sv
 	"number"
 ]}>
 	<div slot="hero">
+		<h1 id="get-a-quick-quote">Get a Quick Quote</h1>
 		<QuickQuoteForm client:load />
 	</div>
 
@@ -23,3 +24,12 @@ import QuickQuoteForm from "../components/forms/QuickQuoteForm/QuickQuoteForm.sv
 </Layout>
 
 
+<style>
+	#get-a-quick-quote {
+		text-align: center;
+		color: var(--light);
+		font-size: 3rem;
+		padding: 1rem;
+		text-shadow: 3px 3px 0px var(--slate);
+	}
+</style>

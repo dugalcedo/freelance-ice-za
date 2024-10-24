@@ -19,7 +19,9 @@
                 {/if}
             </div>
 
-            <div class="type-weight">
+
+
+            <div class="dimensions">
                 <Field label="Type" labelId="pkg-{i}-type">
                     <select 
                         id="pkg-{i}-type"
@@ -32,13 +34,6 @@
                         {/each}
                     </select>
                 </Field>
-                <Field label="Weight (kg)" labelId="pkg-{i}-weight">
-                    <input type="text" id="pkg-{i}-weight" bind:value={$formData.packages[i].weight} placeholder="KG">
-                </Field>
-            </div>
-
-
-            <div class="dimensions">
                 <Field label="Length (cm)" labelId="pkg-{i}-length">
                     <input 
                         type="text" 
@@ -62,6 +57,12 @@
                         placeholder="CM"
                         bind:value={$formData.packages[i].height}
                     >
+                </Field>
+            </div>
+
+            <div class="type-weight">
+                <Field label="Weight (kg)" labelId="pkg-{i}-weight">
+                    <input type="text" id="pkg-{i}-weight" bind:value={$formData.packages[i].weight} placeholder="KG">
                 </Field>
             </div>
 
@@ -185,9 +186,36 @@
 
     /* TABLET RULES */
     @media only screen and (min-width: 800px) {
-        .package-list {
+        .package {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(3, 1fr) 150px;
+            gap: .5rem;
+            align-items: flex-end;
+        }
+
+        .package > * {
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .head {
+            align-self: stretch;
+        }
+
+        .quantity {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            row-gap: 0px;
+        }
+
+        .quantity button {
+            width: 100%;
+            height: 100%;
+        }
+
+        .quantity h4 {
+            text-align: center;
+            grid-column: span 3;
         }
     }
 </style>

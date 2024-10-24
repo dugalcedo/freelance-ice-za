@@ -142,55 +142,57 @@
 
     <!-- bottom -->
     <section class="bottom">
-        <Field label="Description of goods" labelId="description">
-            <textarea id="description" bind:value={$formData.description}></textarea>
-        </Field>
-
-        <Field label="Value of goods (ZAR)" labelId="value">
-            <input type="text" id="value" bind:value={$formData.value} />
-        </Field>
-
-        <Field label="Insurance required" labelId="insuranceRequired">
-            <input 
-                type="checkbox"
-                id="insuranceRequired"
-                bind:checked={$formData.insuranceRequired}
-            >
-        </Field>
-
-        <div class="field">
-            <label for="acceptsTerms">
-                I accept the
-                <a role="button" href="#" on:click|preventDefault={() => openModal("termsAndConditions")}>
-                    Insurance Terms and Conditions
-                </a>
-            </label>
-            <input 
-                type="checkbox"
-                id="acceptsTerms"
-                bind:checked={$formData.acceptsTerms}
-            >
+        <div class="left">
+            <Field label="Insurance required" labelId="insuranceRequired">
+                <input
+                    type="checkbox"
+                    id="insuranceRequired"
+                    bind:checked={$formData.insuranceRequired}
+                >
+            </Field>
+            <Field label="Description of goods" labelId="description">
+                <textarea id="description" bind:value={$formData.description}></textarea>
+            </Field>
+            <Field label="Value of goods (ZAR)" labelId="value">
+                <input type="text" id="value" bind:value={$formData.value} />
+            </Field>
         </div>
 
-        <div class="field">
-            <label for="acceptsDeclaration">
-                I accept the
-                <a role="button" href="#" on:click|preventDefault={() => openModal("declarationOfWeights")}>
-                    Declaration of Weights and Dimensions
-                </a>
-            </label>
-            <input 
-                type="checkbox"
-                id="acceptsDeclaration"
-                bind:checked={$formData.acceptsDeclaration}
-            >
+        <div class="right">
+            <div class="field">
+                <label for="acceptsTerms">
+                    I accept the
+                    <a role="button" href="#" on:click|preventDefault={() => openModal("termsAndConditions")}>
+                        Insurance Terms and Conditions
+                    </a>
+                </label>
+                <input
+                    type="checkbox"
+                    id="acceptsTerms"
+                    bind:checked={$formData.acceptsTerms}
+                >
+            </div>
+            <div class="field">
+                <label for="acceptsDeclaration">
+                    I accept the
+                    <a role="button" href="#" on:click|preventDefault={() => openModal("declarationOfWeights")}>
+                        Declaration of Weights and Dimensions
+                    </a>
+                </label>
+                <input
+                    type="checkbox"
+                    id="acceptsDeclaration"
+                    bind:checked={$formData.acceptsDeclaration}
+                >
+            </div>
+            <button class="submit" type="submit">
+                LIVE QUOTE & BOOK
+            </button>
         </div>
 
-        <button class="submit" type="submit">
-            LIVE QUOTE & BOOK
-        </button>
 
     </section>
+    <!-- end bottom -->
 </form>
 
 <style>
@@ -321,12 +323,39 @@
         height: 8ch;
     }
 
+    .bottom a {
+        color: var(--accent2);
+    }
+
     /* TABLET SIZE */
     @media only screen and (min-width: 800px) {
         .send-recip {
             display: grid;
             grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .bottom {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .bottom .right {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .bottom .submit {
+            grid-column: span 2;
+        }
+
+        .bottom input[type="checkbox"] {
+            margin-right: 0;
+            position: relative;
+            left: 10px;
         }
     }
+
 
 </style>

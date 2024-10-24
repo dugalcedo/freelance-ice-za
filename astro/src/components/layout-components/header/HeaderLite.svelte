@@ -19,12 +19,12 @@
 
 <header class="tri-col">
     <!-- left -->
-    <div class="logo-mobile mobile left">
+    <a href="/" class="logo-mobile mobile left">
         <img src="/images/logo.webp" alt="logo">
-    </div>
-    <div class="desktop left">
+    </a>
+    <a href="/" class="desktop left">
         <Logo style="padding: 0.5rem"/>
-    </div>
+    </a>
 
     <!-- center -->
     <div class="contact-wrapper center">
