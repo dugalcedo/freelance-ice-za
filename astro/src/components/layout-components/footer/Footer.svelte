@@ -19,6 +19,9 @@
                         </div>
                     {/each}
                 </nav>
+                <div class="copy">
+                    &copy; 2012-2024 ICExpress
+                </div>
             </div>
             <div class="navs">
                 <FooterNav
@@ -120,6 +123,7 @@
     @media only screen and (min-width: 1300px) {
         .navs {
             grid-template-columns: 1fr 1fr 1fr;
+            gap: 3rem;
         }
 
         footer {
@@ -128,6 +132,18 @@
 
         .logo-socials {
             flex-direction: row;
+        }
+    }
+
+    @media only screen and (min-width: 1500px) {
+        footer {
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: space-evenly;
+        }
+
+        .navs {
+            display: flex;
         }
     }
 </style>

@@ -32,6 +32,11 @@ const headerMenu = [
         text: "Contact",
         href: "/contact",
         fn: null
+    },
+    {
+        text: "Business Portal",
+        href: "/portal",
+        fn: null
     }
 ];
 
